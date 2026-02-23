@@ -1,13 +1,21 @@
-import React from "react";
-import "../App.css";
+import { useNavigate } from "react-router-dom";
 
-const Dashboard = () => {
+function Dashboard() {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/");
+  };
+
   return (
-    <div className="dashboard-page">
-      <h1>Welcome to Dashboard</h1>
-      <p>You have successfully logged in 🎉</p>
+    <div style={{ textAlign: "center", marginTop: "100px" }}>
+      <h1>Welcome {user?.name}</h1>
+      <p>Email: {user?.email}</p>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
-};
+}
 
 export default Dashboard;

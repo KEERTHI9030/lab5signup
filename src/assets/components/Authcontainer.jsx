@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import "../App.css";
 
-const Authcontainer = () => {
+const Authcontainer = ({ children }) => {
   return (
-    <div>
-      
+    <div className="auth-wrapper">
+      <div className="auth-container">
+        {children}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Authcontainer
+export default Authcontainer;

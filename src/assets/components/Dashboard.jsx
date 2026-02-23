@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import "../App.css";
 
 const Dashboard = () => {
   return (
-    <div>
-      
+    <div className="dashboard-page">
+      <h1>Welcome to Dashboard</h1>
+      <p>You have successfully logged in 🎉</p>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
